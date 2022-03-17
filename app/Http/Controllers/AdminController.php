@@ -10,9 +10,11 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param $locale
+     * @param $page
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index($locale, $id)
+    public function index($locale, $page)
     {
         if (!in_array($locale, ['en', 'ar'])) {
             return view('404');
@@ -20,13 +22,13 @@ class AdminController extends Controller
 
         App::setLocale($locale);
 
-        if (view()->exists($id)) {
-            return view($id);
+        if (view()->exists($page)) {
+            return view($page);
         } else {
             return view('404');
         }
 
-        //   return view($id);
+        //   return view($page);
     }
 
     /**
@@ -53,10 +55,10 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $page
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($page)
     {
         //
     }
@@ -64,10 +66,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($page)
     {
         //
     }
@@ -76,10 +78,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $page)
     {
         //
     }
@@ -87,10 +89,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($page)
     {
         //
     }
