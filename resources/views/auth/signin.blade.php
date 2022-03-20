@@ -25,27 +25,57 @@
 										<div class="mb-5 d-flex"> <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('assets/img/brand/favicon.png')}}" class="sign-favicon ht-40" alt="logo"></a><h1 class="main-logo1 ml-1 mr-0 my-auto tx-28">Va<span>le</span>x</h1></div>
 										<div class="card-sigin">
 											<div class="main-signup-header">
-												<h2>Welcome back!</h2>
-												<h5 class="font-weight-semibold mb-4">Please sign in to continue.</h5>
-												<form action="{{route('home')}}">
+												<h2>{{__('auth.welcome')}}</h2>
+												<h5 class="font-weight-semibold mb-4">{{__('auth.to_continue')}}</h5>
+
+												<form method="post" action="{{route('login')}}">
+                                                    @csrf
+
 													<div class="form-group">
-														<label>Email</label> <input class="form-control" placeholder="Enter your email" type="text">
+														<label for="email">{{__('auth.email')}}</label>
+                                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                                        @error('email')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
 													</div>
+
 													<div class="form-group">
-														<label>Password</label> <input class="form-control" placeholder="Enter your password" type="password">
-													</div><button class="btn btn-main-primary btn-block">Sign In</button>
-													<div class="row row-xs">
+														<label>{{ __('auth.pass') }}</label>
+                                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                                        @error('password')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
+													</div>
+
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                                        <label class="form-check-label" for="remember">
+                                                            {{ __('auth.remember') }}
+                                                        </label>
+                                                    </div>
+
+                                                    <button type="submit"  class="btn btn-main-primary btn-block">{{ __('auth.signin') }}</button>
+
+                                                    <div class="row row-xs">
 														<div class="col-sm-6">
-															<button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
+															<button class="btn btn-block"><i class="fab fa-facebook-f"></i> {{ __('auth.signup_facebook') }}</button>
 														</div>
 														<div class="col-sm-6 mg-t-10 mg-sm-t-0">
-															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> Signup with Twitter</button>
+															<button class="btn btn-info btn-block"><i class="fab fa-twitter"></i> {{ __('auth.signup_twitter') }}</button>
 														</div>
 													</div>
 												</form>
+
+
 												<div class="main-signin-footer mt-5">
-													<p><a href="">Forgot password?</a></p>
-													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>
+													<p><a href="">{{ __('auth.forgot_password') }}</a></p>
+													<p>{{ __('auth.no_account') }} <a href="{{ url('/' . $page='signup') }}">{{ __('auth.create') }}</a></p>
 												</div>
 											</div>
 										</div>

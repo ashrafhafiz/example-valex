@@ -27,6 +27,7 @@
 											<div class="main-signup-header">
 												<h2>Welcome back!</h2>
 												<h5 class="font-weight-semibold mb-4">Please sign in to continue.</h5>
+
 												<form action="#">
 													<div class="form-group">
 														<label>Email</label> <input class="form-control" placeholder="Enter your email" type="text">
@@ -43,6 +44,7 @@
 														</div>
 													</div>
 												</form>
+
 												<div class="main-signin-footer mt-5">
 													<p><a href="">Forgot password?</a></p>
 													<p>Don't have an account? <a href="{{ url('/' . $page='signup') }}">Create an Account</a></p>

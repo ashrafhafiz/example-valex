@@ -1,7 +1,20 @@
 <?php
 
 return [
-    'webapps' => 'WEB APPS',
+    'main' => 'Main',
+    'index' => 'Home',
+    'invoices' => 'Invoices',
+    'total_invoices' => 'All Invoices',
+    'paid_invoices' => 'paid Invoices',
+    'unpaid_invoices' => 'Unpaid Invoices',
+    'partial_invoices' => 'Partially Paid Invoices',
+    'reports' => 'Reports',
+    'invoices_reports' => 'Invoices Reports',
+    'clients_reports' => 'Clients Reports',
+    'users' => 'Users',
+    'users_list' => 'Users List',
+    'users_permissions' => 'Users Permissions',
+    'settings' => 'Settings',
     'apps' => 'Apps',
     'cards' => 'Cards',
     'darggablecards' => 'Darggablecards',

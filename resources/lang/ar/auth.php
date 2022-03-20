@@ -17,16 +17,16 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
-    'welcome' => 'Welcome Back!',
-    'to_continue' => 'Please sign in to continue.',
-    'email' => "Email Address",
-    'pass' => 'Password',
-    'remember' => 'Remember Me',
-    'signin' => 'Sign In',
-    'signup_facebook' => 'Signup with Facebook',
-    'signup_twitter' => 'Signup with Twitter',
-    'forgot_password' => 'Forgot password?',
-    'no_account' => 'Don\'t have an account?',
-    'create' => 'Create an Account',
-    'logout' => 'Sign Out'
+    'welcome' => 'مرحبا بك!',
+    'to_continue' => 'من فضلك سجل دخولك للمتابعة.',
+    'email' => 'عنوان البريد الالكترونى',
+    'pass' => 'كلمة المرور',
+    'remember' => 'تذكرنى',
+    'signin' => 'تسجيل دخول',
+    'signup_facebook' => 'تسجيل بواسطة الفيسبوك',
+    'signup_twitter' => 'تسجيل بواسطة تويتر',
+    'forgot_password' => 'هل نسيت كلمة المرور؟',
+    'no_account' => 'ليس لديك حساب؟',
+    'create' => 'إنشاء حساب',
+    'logout' => 'تسجيل خروج'
 ];
